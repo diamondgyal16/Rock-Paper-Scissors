@@ -34,4 +34,32 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-alert (playRound(prompt("pick your choice, rock, paper, scissors"),getComputerChoice()))
+function playGame(){
+    let yourScore = 0
+    let computerScore = 0
+    for(let i = 0; i < 5; i++){
+      const result = playRound(prompt("pick your choice, rock, paper, scissors"),getComputerChoice())
+      if(result.includes("You win")){
+        yourScore++
+      }
+      else if(result.includes("You lose")){
+        computerScore++
+      }
+      else{
+        yourScore++
+        computerScore++
+      }
+        alert (result)
+    }
+    if(yourScore > computerScore){
+        alert("You won " + yourScore + "-" + computerScore)
+    }
+    else {
+        alert("You lost " + yourScore + "-" + computerScore)
+
+    }
+   
+    }
+
+        
+playGame()
